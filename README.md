@@ -1,8 +1,10 @@
 # Ciclo Superior de Desarrollo de Aplicaciones Multiplataforma
 
-Este repositorio contiene recursos, proyectos y material relacionado con el Ciclo Superior de Desarrollo de Aplicaciones Multiplataforma. Este programa educativo se centra en proporcionar a los estudiantes las habilidades necesarias para desarrollar aplicaciones versátiles que funcionen en múltiples plataformas, como Android, iOS y web.
+Este repositorio contiene recursos, proyectos y material relacionado con el Ciclo Superior de Desarrollo de Aplicaciones Multiplataforma. Este repositorio educativo se centra en proporcionar archivos necesarios para desarrollar aplicaciones versátiles que funcionen en múltiples plataformas, como Android, iOS y web.
 
 ## Contenido
+
+- **Asignaturas**: Aquí encontrarás una colección de cada asignatura el ciclo superior. Estas asignaturas abarcan un amplio tipo de archivos, cada una de su respectiva asignatura.
 
 - **Proyectos**: Aquí encontrarás una colección de proyectos desarrollados durante el ciclo superior. Estos proyectos abarcan una amplia gama de aplicaciones, desde aplicaciones móviles hasta aplicaciones web y más.
 
