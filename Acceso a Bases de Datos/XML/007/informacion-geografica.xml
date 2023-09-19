@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<geografia >
+<region>mundial</region>
+<pais>
+<pais>España</pais>
+<continente>Europa</continente>
+<capital nombre="Madrid"></capital >
+</pais>
+</geografia>

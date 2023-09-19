@@ -1,0 +1,22 @@
+{
+    "Paginas": {
+      "Pagina": [
+        {
+          "Nombre": "Xunta",
+          "Descripcion": "Portal educativo.",
+          "URL": "https://www.edu.xunta.gal/"
+        },
+        {
+          "Nombre": "Wikipedia",
+          "Descripcion": "La enciclopedia libre.",
+          "URL": "https://www.wikipedia.org/"
+        },
+        {
+          "Nombre": "W3C",
+          "Descripcion": "World Wide Web Consortium.",
+          "URL": "https://www.w3.org/"
+        }
+      ]
+    }
+  }
+  
