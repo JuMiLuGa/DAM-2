@@ -1,8 +1,0 @@
-{
-    "nombre": "Juan",
-    "edad": 20,
-    "estudios": {
-        "estudio": "Primario",
-        "estudio": "Secundario"
-    }
-}

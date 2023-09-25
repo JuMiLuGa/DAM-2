@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/agrandar"
+        android:title="Agrandar fonte"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_launcher_foreground"/>
+    <item
+        android:id="@+id/reducir"
+        android:title="Reducir fonte"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_launcher_foreground"/>/>
+    <item
+        android:id="@+id/cor"
+        android:title="Cor">
+        <menu>
+            <item
+                android:id="@+id/vermello"
+                android:title="Vermello" />
+            <item
+                android:id="@+id/verde"
+                android:title="Verde" />
+            <item
+                android:id="@+id/azul"
+                android:title="Azul" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/sair"
+        android:title="Sair" />
+</menu>

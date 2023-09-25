@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Paginas>
+
+    <Pagina>
+        <Nombre> Xunta </Nombre>
+        <Descripcion> Portal educativo. </Descripcion>
+        <URL> https://www.edu.xunta.gal/ </URL>
+    </Pagina>
+
+    <Pagina>
+        <Nombre> Wikipedia </Nombre>
+        <Descripcion> La enciclopedia libre. </Descripcion>
+        <URL> https://www.wikipedia.org/ </URL>
+    </Pagina>
+
+    <Pagina>
+        <Nombre> W3C </Nombre>
+        <Descripcion> World Wide Web Consortium. </Descripcion>
+        <URL> https://www.w3.org/ </URL>
+    </Pagina>
+
+</Paginas>
