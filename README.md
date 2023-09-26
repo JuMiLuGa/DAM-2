@@ -16,7 +16,7 @@ Este repositorio contiene recursos, proyectos y material relacionado con el Cicl
 
 ## Licencia
 
-Este repositorio está bajo la licencia [Nombre de la Licencia]. Consulta el archivo LICENSE para obtener más detalles.
+Este repositorio está bajo la licencia privativa personalizada. Consulta el archivo LICENSE para obtener más detalles.
 
 ## Contacto
 
