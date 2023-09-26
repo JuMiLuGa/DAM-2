@@ -73,7 +73,6 @@ public class TaskView extends javax.swing.JFrame {
         }
     }
     
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addTaskjButton;
     private javax.swing.JTextField taskDescriptionTextField;
