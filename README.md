@@ -1,6 +1,6 @@
 # Ciclo Superior de Desarrollo de Aplicaciones Multiplataforma
 
-Este repositorio contiene recursos, proyectos y material relacionado con el Ciclo Superior de Desarrollo de Aplicaciones Multiplataforma. Este repositorio educativo se centra en proporcionar archivos necesarios para desarrollar aplicaciones versátiles que funcionen en múltiples plataformas, como Android, iOS y web.
+Este repositorio contiene recursos, proyectos y material relacionado con el Ciclo Superior de Desarrollo de Aplicaciones Multiplataforma. Este repositorio se centra en proporcionar archivos necesarios para desarrollar aplicaciones versátiles que funcionen en múltiples plataformas, como Android, iOS y web.
 
 ## Contenido
 
@@ -12,9 +12,7 @@ Este repositorio contiene recursos, proyectos y material relacionado con el Cicl
 
 - **Documentación**: Si estás interesado en obtener información detallada sobre el plan de estudios, los requisitos del programa y los procedimientos, puedes encontrar la documentación oficial aquí.
 
-## Contribuciones
-
-¡Tus contribuciones son bienvenidas! Si eres estudiante del ciclo superior, puedes agregar tus proyectos, ejercicios o notas útiles para ayudar a tus compañeros. Si eres un profesional experimentado, tus consejos y guías serán apreciados por los aprendices. Para contribuir, simplemente crea un "fork" del repositorio, realiza tus cambios y envía una solicitud de extracción.
+- **Tareas**: En esta seccion encontraras tareas de las asignaturas, para poder compartirlas y resolver dudas en las mismas.
 
 ## Licencia
 
@@ -22,6 +20,6 @@ Este repositorio está bajo la licencia [Nombre de la Licencia]. Consulta el arc
 
 ## Contacto
 
-Si tienes preguntas, sugerencias o simplemente quieres ponerte en contacto con nosotros, no dudes en abrir un problema (issue) o enviarnos un correo electrónico a lubian.ganete.juliomiguel.ald@gmail.com.
+Si tienes preguntas, sugerencias o simplemente quieres ponerte en contacto conmigo, no dudes en abrir un problema (issue) o enviarnos un correo electrónico a lubian.ganete.juliomiguel.ald@gmail.com.
 
-¡Esperamos que este repositorio sea una valiosa fuente de información y recursos para tu aprendizaje en el Ciclo Superior de Desarrollo de Aplicaciones Multiplataforma!
+¡Espero que este repositorio sea una valiosa fuente de información y recursos para tu aprendizaje en el Ciclo Superior de Desarrollo de Aplicaciones Multiplataforma!
