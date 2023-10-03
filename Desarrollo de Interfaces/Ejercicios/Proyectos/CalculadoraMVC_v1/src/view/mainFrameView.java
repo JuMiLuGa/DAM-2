@@ -1,6 +1,6 @@
 package view;
 
-import main.mainCalculatorMVC;
+import main.CalculatorMain;
 
 public class mainFrameView extends javax.swing.JFrame {
 
@@ -59,7 +59,7 @@ public class mainFrameView extends javax.swing.JFrame {
     //Start code
     
     private void calculatorMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculatorMenuItemActionPerformed
-        mainCalculatorMVC calculator = new mainCalculatorMVC();
+        CalculatorMain calculator = new CalculatorMain();
         calculator.main(null);
     }//GEN-LAST:event_calculatorMenuItemActionPerformed
 

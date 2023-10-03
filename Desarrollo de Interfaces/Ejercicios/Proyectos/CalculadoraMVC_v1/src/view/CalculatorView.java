@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.event.ActionListener;
+
 public class CalculatorView extends javax.swing.JFrame {
 
     public CalculatorView() {
@@ -232,136 +234,129 @@ public class CalculatorView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nineButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nineButtonActionPerformed
-        modifyLCD("9");
     }//GEN-LAST:event_nineButtonActionPerformed
 
     private void equalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalButtonActionPerformed
-        valueButton(".");
-        clearLCD();
-        switch (operador) {
-            case "+":
-                modifyLCD(String.valueOf(num1 + num2));
-                num1 = (num1 + num2);
-                break;
-            case "-":
-                modifyLCD(String.valueOf(num1 - num2));
-                num1 = (num1 - num2);
-                break;
-            case "*":
-                modifyLCD(String.valueOf(num1 * num2));
-                num1 = (num1 * num2);
-                break;
-            case "/":
-                modifyLCD(String.format("%.2f",(num1 + 0.0) / num2));
-                num1 = num1 / num2;
-                break;
-        }
     }//GEN-LAST:event_equalButtonActionPerformed
 
     private void eightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightButtonActionPerformed
-        modifyLCD("8");
     }//GEN-LAST:event_eightButtonActionPerformed
 
     private void sevenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sevenButtonActionPerformed
-        modifyLCD("7");
     }//GEN-LAST:event_sevenButtonActionPerformed
 
     private void sixButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sixButtonActionPerformed
-        modifyLCD("6");
     }//GEN-LAST:event_sixButtonActionPerformed
 
     private void fiveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fiveButtonActionPerformed
-        modifyLCD("5");
     }//GEN-LAST:event_fiveButtonActionPerformed
 
     private void fourButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fourButtonActionPerformed
-        modifyLCD("4");
     }//GEN-LAST:event_fourButtonActionPerformed
 
     private void threeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threeButtonActionPerformed
-        modifyLCD("3");
     }//GEN-LAST:event_threeButtonActionPerformed
 
     private void twoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoButtonActionPerformed
-        modifyLCD("2");
     }//GEN-LAST:event_twoButtonActionPerformed
 
     private void oneButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneButtonActionPerformed
-        modifyLCD("1");
     }//GEN-LAST:event_oneButtonActionPerformed
 
     private void zeroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zeroButtonActionPerformed
-        modifyLCD("0");
     }//GEN-LAST:event_zeroButtonActionPerformed
 
     private void splitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_splitButtonActionPerformed
-        valueButton("/");
-        clearLCD();
     }//GEN-LAST:event_splitButtonActionPerformed
 
     private void multiplyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyButtonActionPerformed
-        valueButton("*");
-        clearLCD();
     }//GEN-LAST:event_multiplyButtonActionPerformed
 
     private void subtractButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtractButtonActionPerformed
-        valueButton("-");
-        clearLCD();
     }//GEN-LAST:event_subtractButtonActionPerformed
 
     private void additionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_additionButtonActionPerformed
-        valueButton("+");
-        clearLCD();
     }//GEN-LAST:event_additionButtonActionPerformed
 
     private void clearButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearButtonActionPerformed
-        acDisplay();
+        
     }//GEN-LAST:event_clearButtonActionPerformed
 
-    private Integer num1;
-    private Integer num2;
-    private Integer ult;
-    private Integer res;
-    private String ultOperador;
-    private String operador;
-
-    private void acDisplay() {
-        lcdTextField.setText("0");
-        num1 = null;
-        num2 = null;
+    public void addNineButtonListener(ActionListener listener) {
+        nineButton.addActionListener(listener);
+    }
+    
+    public void addEightButtonListener(ActionListener listener) {
+        eightButton.addActionListener(listener);
     }
 
-    private void clearLCD() {
-        lcdTextField.setText("");
-
+    public void addSevenButtonListener(ActionListener listener) {
+        sevenButton.addActionListener(listener);
+    }
+    
+    public void addSixButtonListener(ActionListener listener) {
+        sixButton.addActionListener(listener);
+    }
+    
+    public void addFiveButtonListener(ActionListener listener) {
+        fiveButton.addActionListener(listener);
     }
 
-    private void modifyLCD(String valor) {
-        String texto = lcdTextField.getText();
-        if ("0".equals(lcdTextField.getText())) {
-            lcdTextField.setText(valor);
-        } else {
-            lcdTextField.setText(texto + valor);
-        }
+    public void addFourButtonListener(ActionListener listener) {
+        fourButton.addActionListener(listener);
+    }
+    
+    public void addThreeButtonListener(ActionListener listener) {
+        threeButton.addActionListener(listener);
+    }
+    
+    public void addTwoButtonListener(ActionListener listener) {
+        twoButton.addActionListener(listener);
+    }
+    
+    public void addOneButtonListener(ActionListener listener) {
+        oneButton.addActionListener(listener);
+    }
+    
+    public void addZeroButtonListener(ActionListener listener) {
+        zeroButton.addActionListener(listener);
+    }
+    
+    public void addAdditionButtonListener(ActionListener listener) {
+        additionButton.addActionListener(listener);
+    }
+    
+    public void addMultiplyButtonListener(ActionListener listener) {
+        multiplyButton.addActionListener(listener);
+    }
+    
+    public void addSubtractButtonListener(ActionListener listener) {
+        subtractButton.addActionListener(listener);
+    }
+    
+    public void addSplitButtonListener(ActionListener listener) {
+        splitButton.addActionListener(listener);
+    }
+    
+    public void addEqualButtonListener(ActionListener listener) {
+        equalButton.addActionListener(listener);
+    }
+    
+    public void addClearButtonListener(ActionListener listener) {
+        clearButton.addActionListener(listener);
+    }
+    
+    public String getLcdText() {
+        return lcdTextField.getText();
     }
 
-    private void valueButton(String operador) {
-
-        if (num1 == null) {
-            num1 = Integer.parseInt(lcdTextField.getText());
-            System.out.println(num1);
-        } else if (num2 == null || !ultOperador.equals(".")) {
-            num2 = Integer.parseInt(lcdTextField.getText());
-            System.out.println(num2);
-
-        }
-
-        clearLCD();
-        if (!operador.equals(".")) {
-            this.operador = operador;
-        }
-        ultOperador = operador;
+    public void setLcdText(String text) {
+        lcdTextField.setText(text);
     }
+    
+    
+    
+    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
