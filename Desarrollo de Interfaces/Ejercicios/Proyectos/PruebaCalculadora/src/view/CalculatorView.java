@@ -39,21 +39,53 @@ public class CalculatorView extends javax.swing.JFrame {
         lcdTextField.setEnabled(false);
 
         sevenButton.setText("7");
+        
+
         eightButton.setText("8");
+        
+
         nineButton.setText("9");
+        
+
         splitButton.setText("/");
+        
+
         fourButton.setText("4");
+        
+
         fiveButton.setText("5");
+        
+
         sixButton.setText("6");
+        
+
         multiplyButton.setText("X");
+        
+
         oneButton.setText("1");
-        twoButton.setText("2");       
+        
+
+        twoButton.setText("2");
+        
+
         threeButton.setText("3");
+        
+
         clearButton.setText("AC");
+        
+
         subtractButton.setText("-");
+        
+
         additionButton.setText("+");
-        equalButton.setText("=");      
+        
+
+        equalButton.setText("=");
+        
+
         zeroButton.setText("0");
+        
+
         dotButton.setText(".");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
