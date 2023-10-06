@@ -1,0 +1,105 @@
+package es.ies.multiproceso;
+
+import java.io.*;
+import java.util.Scanner;
+
+public class Main {
+
+static final int NUM_PROCESOS = 4;
+static final String PREFIJO_FICHEROS = "fich";
+
+public static void lanzarSumador(int n1, int n2, String fichResultados) throws IOException {
+String comando = "es.ies.multiproceso.Sumador";
+
+// Asumo que los archivos .class están en la carpeta out/production/es.ies.multiproceso/
+File directorioSumador = new File("C:\\Users\...");
+
+File fichResultado = new File(fichResultados);
+ProcessBuilder pb = new ProcessBuilder("java", comando, String.valueOf(n1), String.valueOf(n2));
+pb.directory(directorioSumador);
+pb.redirectOutput(fichResultado);
+Process p = pb.start();
+try {
+int exitCode = p.waitFor();
+System.out.println("Proceso para sumar desde " + n1 + " hasta " + n2 + " ha finalizado con código: " + exitCode);
+} catch (InterruptedException e) {
+e.printStackTrace();
+}
+}
+
+public static int getResultadoFichero(String nombreFichero) {
+int suma = 0;
+try (BufferedReader br = new BufferedReader(new FileReader(nombreFichero))) {
+String linea = br.readLine();
+if(linea != null && !linea.isEmpty()){
+suma = Integer.parseInt(linea);
+}
+} catch (FileNotFoundException e) {
+System.out.println("No se pudo abrir " + nombreFichero);
+} catch (IOException e) {
+System.out.println("Error de lectura en " + nombreFichero);
+}
+return suma;
+}
+
+public static int getSumaTotal() {
+int sumaTotal = 0;
+for (int i = 1; i <= NUM_PROCESOS; i++) {
+sumaTotal += getResultadoFichero(PREFIJO_FICHEROS + i);
+}
+return sumaTotal;
+}
+
+public static void main(String[] args) throws IOException, InterruptedException {
+Scanner scanner = new Scanner(System.in);
+
+System.out.print("Introduce el primer número: ");
+int n1 = scanner.nextInt();
+
+System.out.print("Introduce el segundo número: ");
+int n2 = scanner.nextInt();
+
+int salto = (n2 - n1) / NUM_PROCESOS;
+for (int i = 1; i <= NUM_PROCESOS; i++) {
+int n2ForThisThread = ((n1 + (i * salto)) > n2) ? n2 : (n1 + (i * salto));
+lanzarSumador(n1, n2ForThisThread, PREFIJO_FICHEROS + i);
+n1 = n2ForThisThread + 1;
+}
+Thread.sleep(5000); // Espera un poco para que los procesos tengan tiempo de finalizar
+int sumaTotal = getSumaTotal();
+System.out.println("La suma total es: " + sumaTotal);
+}
+}
+
+package es.ies.multiproceso;
+
+public class Sumador {
+
+public static int sumar(int n1, int n2){
+int suma=0;
+for (int i=n1; i<=n2; i++){
+suma += i;
+}
+return suma;
+}
+
+public static void main(String[] args){
+if(args.length < 2) {
+System.err.println("Número insuficiente de argumentos. Se esperaban 2.");
+System.exit(1);
+}
+
+int n1, n2;
+try {
+n1 = Integer.parseInt(args[0]);
+n2 = Integer.parseInt(args[1]);
+} catch(NumberFormatException e) {
+System.err.println("Los argumentos deben ser números enteros.");
+System.exit(1);
+return;
+}
+
+int suma = sumar(n1, n2);
+System.out.println(suma);
+}
+}
