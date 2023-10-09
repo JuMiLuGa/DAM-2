@@ -28,7 +28,7 @@ public class CalculatorModel {
                     result = num1 * num2;
                     break;
                 case "/":
-                    if (num2 != 0) {
+                    if (num2 != 0.0) {
                         result = num1 / num2;
                     }
                     break;
@@ -50,5 +50,13 @@ public class CalculatorModel {
     public int getNum2() {
     return num2;
 }
+
+    public int getNum1() {
+        return num1;
+    }
+
+    public String getOperator() {
+        return operator;
+    }
 
 }
