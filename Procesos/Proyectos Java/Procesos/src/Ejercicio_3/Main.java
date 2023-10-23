@@ -1,48 +1,28 @@
 package Ejercicio_3;
 
-import java.io.*;
-import java.util.Scanner;
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.Formatter;
 
 public class Main {
-
     public static void main(String[] args) {
-        String fileName = "fichero.txt";
-        String clave = "passwd";
+        Logger logger = Logger.getLogger("Main");
+        FileHandler fileHandler;
 
-        System.out.println("Escribe algo en el fichero: ");
-        try (PrintWriter writer = new PrintWriter(fileName)) {
-            Scanner scanner = new Scanner(System.in);
-            String userInput = scanner.nextLine();
-            writer.println(userInput);
+        try {
+            fileHandler = new FileHandler("log3.txt", true);
+            logger.addHandler(fileHandler);
+
+            Formatter customFormatter = new CustomLogFormatter();
+            fileHandler.setFormatter(customFormatter);
+
+            ProcesoA.main(args, fileHandler);
+            ProcesoB.main(args, fileHandler);
         } catch (IOException e) {
             e.printStackTrace();
-        }
-
-        String contenido = "";
-        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
-            contenido = reader.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        if (contenido != null && contenido.equals(clave)) {
-            System.out.println("La clave es correcta. Terminando el programa.");
-        } else {
-            System.out.println("La clave es incorrecta. Volviendo al proceso 1.");
-            String javaHome = System.getProperty("java.home");
-            String javaBin = javaHome + File.separator + "bin" + File.separator + "java";
-            String classpath = System.getProperty("java.class.path");
-            String className = Main.class.getCanonicalName();
-
-            ProcessBuilder processBuilder = new ProcessBuilder(javaBin, "-cp", classpath, className);
-            processBuilder.inheritIO();
-
-            try {
-                Process proceso1 = processBuilder.start();
-                proceso1.waitFor();
-            } catch (IOException | InterruptedException e) {
-                e.printStackTrace();
-            }
         }
     }
 }
+
+

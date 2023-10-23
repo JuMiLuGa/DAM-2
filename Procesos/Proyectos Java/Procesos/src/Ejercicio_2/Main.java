@@ -15,7 +15,7 @@ public class Main {
             String className = "Ejercicio_2.Escribidor";
             constructores[i].command("java", "-cp", classpath, className, String.valueOf(i + 1));
 
-            constructores[i].redirectError(new File("E:\\DAM-2\\Procesos\\Proyectos Java\\Procesos\\error.txt"));
+            constructores[i].redirectError(new File("E:\\DAM-2\\Procesos\\Proyectos Java\\Procesos\\error2.txt"));
         }
 
         Process p1 = constructores[0].start();

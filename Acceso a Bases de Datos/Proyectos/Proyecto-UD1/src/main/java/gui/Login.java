@@ -60,5 +60,17 @@ public class Login extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnIniciarSesion) {
+			String nombreUsuario = textoUsuario.getText();
+			String contrasena = textoContraseña.getText();
+			// Aquí debes llamar a la lógica de la aplicación para verificar el inicio de sesión.
+			// Puedes acceder a la instancia de `App` que pasaste al constructor para ello.
+			boolean inicioSesionExitoso = app.iniciarSesion(nombreUsuario, contrasena);
+			if (inicioSesionExitoso) {
+				// Realiza acciones posteriores al inicio de sesión exitoso, como abrir una ventana principal.
+			} else {
+				// Muestra un mensaje de error o realiza acciones para el inicio de sesión fallido.
+			}
 	}
+}
 }
