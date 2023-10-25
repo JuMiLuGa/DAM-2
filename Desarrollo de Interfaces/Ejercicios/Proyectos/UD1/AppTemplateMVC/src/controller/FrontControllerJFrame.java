@@ -39,7 +39,7 @@ public class FrontControllerJFrame {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ReserveJFrame rjf = new ReserveJFrame(view, );
+                ReserveJFrame rjf = new ReserveJFrame(view,true);
                 ReserveController rc = new ReserveController(rjf);
                 rjf.setVisible(true);
             }
