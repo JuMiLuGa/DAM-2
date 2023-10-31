@@ -13,6 +13,7 @@ public class App {
         users = new Users();
         // Inicializa y agrega usuarios a la colección Users.
 
+        session = new Session();
 
     }
 
@@ -24,7 +25,7 @@ public class App {
 
             if (BCrypt.checkpw(contrasena, hashAlmacenado)) {
                 System.out.println("sesion iniciada");
-                session.setUser(usuario);
+                session.setUser(users.getUserByUsername(nombreUsuario));
                 return true;
             }
         }
