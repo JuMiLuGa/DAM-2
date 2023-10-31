@@ -4,7 +4,7 @@ import org.mindrot.jbcrypt.BCrypt;
 public class User {
     private String name;
     private String passwordHash; //La contraseña debe ser el Hash
-    private int age;
+    private String age;
     private String email;
 
     public String getName() {
@@ -23,11 +23,11 @@ public class User {
         this.passwordHash = passwordHash;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -39,7 +39,7 @@ public class User {
         this.email = email;
     }
 
-    public User(String name, String password, int age, String email) {
+    public User(String name, String password, String age, String email) {
         //Inicializar los atributos con los valores adecuados
         this.name = name;
         this.passwordHash = BCrypt.hashpw(password, BCrypt.gensalt()); //La contraseña debe ser el Hash

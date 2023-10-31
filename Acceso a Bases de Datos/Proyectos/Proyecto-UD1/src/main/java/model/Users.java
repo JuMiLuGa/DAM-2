@@ -4,29 +4,33 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Users {
-    private Map<String, User> userMap;
+    private HashMap<String, User> users = new HashMap<>();
 
     public Users() {
-        userMap = new HashMap<>();
+        User user = new User("admin", "abc123.", "0", "admin@admin");
+        users.put(user.getName(), user);
     }
 
-    // Agregar un usuario al mapa de usuarios
-    public void addUser(String username, User user) {
-        userMap.put(username, user);
+    public void addUser(User user) {
+        if (user != null && user.getName() != null && !user.getName().isEmpty()) {
+            users.put(user.getName(), user);
+        }
     }
 
-    // Obtener un usuario por nombre de usuario
-    public User getUserByUsername(String username) {
-        return userMap.get(username);
+    // Obtener usuario por nombre
+    public User getUserByUsername(String name) {
+        return users.get(name);
     }
 
-    // Verificar si un usuario existe por nombre de usuario
-    public boolean userExists(String username) {
-        return userMap.containsKey(username);
+
+    // Eliminar usuario por nombre
+    public void deleteUser(String name) {
+        users.remove(name);
     }
 
-    // Obtener todos los usuarios en una colección
-    public Map<String, User> getAllUsers() {
-        return userMap;
+    // Verificar si un usuario existe por nombre
+    public boolean userExists(String name) {
+        return users.containsKey(name);
     }
+
 }
