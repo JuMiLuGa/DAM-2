@@ -103,6 +103,11 @@ public class UserDetails extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+
+		if(e.getSource() == btnVolver){
+			dispose();
+		}
+
 		if(e.getSource() == xmlMenu) {
 			System.out.println("Exportar usuario (XML)");
 			JFileChooser fileChooser = new JFileChooser();
@@ -112,6 +117,7 @@ public class UserDetails extends JFrame implements ActionListener {
 			if (returnValue == JFileChooser.APPROVE_OPTION) {
 				File selectedFile = fileChooser.getSelectedFile();
 				System.out.println("Archivo seleccionado: " + selectedFile.getAbsolutePath());
+				app.exportarXML(selectedFile);
 			} else {
 				System.out.println("Selección de archivo cancelada.");
 			}
@@ -126,6 +132,7 @@ public class UserDetails extends JFrame implements ActionListener {
 			if (returnValue == JFileChooser.APPROVE_OPTION) {
 				File selectedFile = fileChooser.getSelectedFile();
 				System.out.println("Archivo seleccionado: " + selectedFile.getAbsolutePath());
+				app.exportarJSON(selectedFile);
 			} else {
 				System.out.println("Selección de archivo cancelada.");
 			}

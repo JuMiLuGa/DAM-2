@@ -16,8 +16,7 @@ public class Login extends JFrame implements ActionListener {
 	private JButton btnIniciarSesion;
 	private App app;
 
-	public Login(App app)
-	{
+	public Login(App app) {
 		this.app = app;
 
 		setTitle("Aplicación usuarios");
@@ -56,6 +55,9 @@ public class Login extends JFrame implements ActionListener {
 		btnIniciarSesion.setBounds(80, 145, 140, 23);
 		btnIniciarSesion.addActionListener(this);
 		contentPane.add(btnIniciarSesion);
+
+		getRootPane().setDefaultButton(btnIniciarSesion);
+
 	}
 
 	@Override
@@ -74,5 +76,6 @@ public class Login extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(this, "Usuario y/o contraseña incorrectos");
 			}
 	}
+
 }
 }

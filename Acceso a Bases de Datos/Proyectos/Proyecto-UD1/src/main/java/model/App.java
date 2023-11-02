@@ -1,7 +1,10 @@
 package model;
 
+import gui.UserChangePassword;
 import gui.UserDetails;
 import org.mindrot.jbcrypt.BCrypt;
+
+import java.io.File;
 
 public class App {
     private final String filename = "usuarios.bin";
@@ -24,12 +27,11 @@ public class App {
             String hashAlmacenado = usuario.getPasswordHash();
 
             if (BCrypt.checkpw(contrasena, hashAlmacenado)) {
-                System.out.println("sesion iniciada");
                 session.setUser(users.getUserByUsername(nombreUsuario));
                 return true;
             }
         }
-        System.out.println("sesion no iniciada");
+
         return false;
     }
     public void verDetallesUsuario() {
@@ -40,5 +42,22 @@ public class App {
 
         UserDetails userDetailsWindow = new UserDetails(this, name, age, email);
         userDetailsWindow.setVisible(true);
+    }
+
+    public void exportarXML(File file) {
+        XML.exportarXML(session.getUser(),file);
+    }
+
+    public void exportarJSON(File file) {
+        JSON.exportarJSON(session.getUser(),file);
+    }
+
+    public void changePasswd(String text) {
+
+    }
+
+    public void changePasswdWindow() {
+        UserChangePassword changePasswordWindow = new UserChangePassword(this, session.getUser().getName());
+        changePasswordWindow.setVisible(true);
     }
 }

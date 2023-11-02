@@ -105,6 +105,16 @@ public class User extends JFrame implements ActionListener {
 		if(e.getSource() == btnVerDatos){
 			app.verDetallesUsuario();
 		}
+
+		if(e.getSource() == btnCambiarContraseña){
+			app.changePasswdWindow();
+		}
+
+		if(e.getSource() == btnCerrarSesion){
+			Login loginWindow = new Login(app);
+			dispose();
+			loginWindow.setVisible(true);
+		}
 	}
 
 }
