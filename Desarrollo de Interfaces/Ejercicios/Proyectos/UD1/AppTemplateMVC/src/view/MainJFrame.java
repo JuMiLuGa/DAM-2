@@ -30,15 +30,15 @@ public class MainJFrame extends javax.swing.JFrame {
 
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
-        reserveMenuItem = new javax.swing.JMenuItem();
+        donationsMenuItem = new javax.swing.JMenuItem();
         quitMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         fileMenu.setText("File");
 
-        reserveMenuItem.setText("Reserve");
-        fileMenu.add(reserveMenuItem);
+        donationsMenuItem.setText("Gestionar donaciones bibliograficas");
+        fileMenu.add(donationsMenuItem);
 
         quitMenuItem.setText("Quit");
         fileMenu.add(quitMenuItem);
@@ -64,16 +64,15 @@ public class MainJFrame extends javax.swing.JFrame {
     public void setQuitMenuItemListener(ActionListener listener) {
         this.quitMenuItem.addActionListener(listener);
     }
-
+    
+    public void setDonationsItemListener(ActionListener listener) {
+        this.donationsMenuItem.addActionListener(listener);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem donationsMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem quitMenuItem;
-    private javax.swing.JMenuItem reserveMenuItem;
     // End of variables declaration//GEN-END:variables
-
-    public void setReserveMenuItemListener(ActionListener setReserveMenuItemActionListener) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

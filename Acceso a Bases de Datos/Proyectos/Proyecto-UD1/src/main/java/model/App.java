@@ -45,10 +45,12 @@ public class App {
     }
 
     public void exportarXML(File file) {
+
         XML.exportarXML(session.getUser(),file);
     }
 
     public void exportarJSON(File file) {
+
         JSON.exportarJSON(session.getUser(),file);
     }
 
@@ -59,5 +61,9 @@ public class App {
     public void changePasswdWindow() {
         UserChangePassword changePasswordWindow = new UserChangePassword(this, session.getUser().getName());
         changePasswordWindow.setVisible(true);
+    }
+
+    public void exportarZIP() {
+        ZIP.exportarZIP();
     }
 }

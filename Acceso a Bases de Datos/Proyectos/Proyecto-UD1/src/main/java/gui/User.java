@@ -110,6 +110,10 @@ public class User extends JFrame implements ActionListener {
 			app.changePasswdWindow();
 		}
 
+		if(e.getSource() == btnExportarUsuarios){
+			app.exportarZIP();
+		}
+
 		if(e.getSource() == btnCerrarSesion){
 			Login loginWindow = new Login(app);
 			dispose();

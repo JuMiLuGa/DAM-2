@@ -9,9 +9,9 @@
             <Property name="text" type="java.lang.String" value="File"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="reserveMenuItem">
+            <MenuItem class="javax.swing.JMenuItem" name="donationsMenuItem">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Reserve"/>
+                <Property name="text" type="java.lang.String" value="Gestionar donaciones bibliograficas"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="quitMenuItem">

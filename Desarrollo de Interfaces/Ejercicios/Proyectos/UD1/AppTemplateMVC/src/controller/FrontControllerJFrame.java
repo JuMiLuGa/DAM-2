@@ -4,11 +4,11 @@
  */
 package controller;
 
-import controller.Reserve.ReserveController;
+import controller.donations.donationsController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.MainJFrame;
-import view.ReserveJFrame;
+import view.donations.donationsJDialog;
 
 /**
  *
@@ -21,7 +21,7 @@ public class FrontControllerJFrame {
     public FrontControllerJFrame(MainJFrame view) {
         this.view = view;
         this.view.setQuitMenuItemListener(this.setQuitMenuItemActionListener());
-        this.view.setReserveMenuItemListener(setReserveMenuItemActionListener());
+        this.view.setDonationsItemListener(this.setDonationsMenuItemActionListener());
     }
 
     private ActionListener setQuitMenuItemActionListener() {
@@ -35,13 +35,13 @@ public class FrontControllerJFrame {
         return al;
     }
 
-        private ActionListener setReserveMenuItemActionListener() {
+    private ActionListener setDonationsMenuItemActionListener() {
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ReserveJFrame rjf = new ReserveJFrame(view,true);
-                ReserveController rc = new ReserveController(rjf);
-                rjf.setVisible(true);
+                donationsJDialog dns = new donationsJDialog(view, true);
+                donationsController dnsc = new donationsController(dns);
+                dns.setVisible(true);
             }
         };
         return al;

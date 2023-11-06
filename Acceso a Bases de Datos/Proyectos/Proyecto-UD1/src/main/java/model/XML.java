@@ -12,6 +12,7 @@ public class XML {
     public static void exportarXML(User user, File file){
 
         String name = user.getName();
+        String hash = user.getPasswordHash();
         String age = user.getAge();
         String mail = user.getEmail();
 
@@ -19,6 +20,7 @@ public class XML {
         xmlBuilder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
         xmlBuilder.append("<user>");
         xmlBuilder.append("<name>").append(name).append("</name>");
+        xmlBuilder.append("<passwordHash>").append(hash).append("</passwordHash>");
         xmlBuilder.append("<age>").append(age).append("</age>");
         xmlBuilder.append("<email>").append(mail).append("</email>");
         xmlBuilder.append("</user>");
