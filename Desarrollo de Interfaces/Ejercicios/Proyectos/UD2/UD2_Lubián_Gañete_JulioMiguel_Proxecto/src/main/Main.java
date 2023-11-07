@@ -1,9 +1,7 @@
-
 package main;
 
 import controller.FrontControllerJFrame;
 import view.MainJFrame;
-
 
 public class Main {
     public static void main(String[] args) {

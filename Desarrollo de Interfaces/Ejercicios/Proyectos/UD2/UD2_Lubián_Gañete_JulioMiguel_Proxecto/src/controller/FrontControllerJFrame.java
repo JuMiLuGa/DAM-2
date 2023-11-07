@@ -1,11 +1,10 @@
 package controller;
 
-import controller.donations.donationsController;
+import controller.manageData.ManageDataController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.MainJFrame;
-import view.donations.donationsJDialog;
-
+import view.manageData.ManageDataJDialog;
 
 public class FrontControllerJFrame {
 
@@ -14,7 +13,8 @@ public class FrontControllerJFrame {
     public FrontControllerJFrame(MainJFrame view) {
         this.view = view;
         this.view.setQuitMenuItemListener(this.setQuitMenuItemActionListener());
-        this.view.setDonationsItemListener(this.setDonationsMenuItemActionListener());
+        this.view.setManageDataMenuItemListener(this.setManageDataMenuItemActionListener());
+        
     }
 
     private ActionListener setQuitMenuItemActionListener() {
@@ -27,16 +27,17 @@ public class FrontControllerJFrame {
         };
         return al;
     }
-
-    private ActionListener setDonationsMenuItemActionListener() {
+    
+    private ActionListener setManageDataMenuItemActionListener(){
         ActionListener al = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                donationsJDialog dns = new donationsJDialog(view, true);
-                donationsController dnsc = new donationsController(dns);
-                dns.setVisible(true);
+                ManageDataJDialog mdd = new ManageDataJDialog(view, true);
+                ManageDataController mddc = new ManageDataController(mdd);
+                mdd.setVisible(true);
             }
         };
         return al;
     }
+
 }

@@ -1,5 +1,6 @@
 package Ejercicio_2_2;
 
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,12 +14,12 @@ public class DivisorCalculator {
         }
 
         int divisor = Integer.parseInt(args[0]);
-        String fileName = "divisors_" + divisor + ".txt";
 
-        try (FileWriter writer = new FileWriter(new File(fileName))) {
+        try (FileWriter writer = new FileWriter(new File("divisors.txt"), true)) {
+
             for (int i = 1; i <= 100; i++) {
                 if (i % divisor == 0) {
-                    writer.write(i + "\n");
+                    writer.write("Divisor de " + divisor + ": " + i + "\n");
                 }
             }
         } catch (IOException e) {
@@ -26,4 +27,5 @@ public class DivisorCalculator {
         }
     }
 }
+
 

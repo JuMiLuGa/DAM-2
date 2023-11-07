@@ -5,21 +5,24 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
-        // Crear ProcessBuilder para los procesos de cálculo de divisores
-        ProcessBuilder process2 = new ProcessBuilder("java", "-cp", "DivisorCalculator", "2");
-        ProcessBuilder process3 = new ProcessBuilder("java", "-cp", "DivisorCalculator", "3");
-        ProcessBuilder process4 = new ProcessBuilder("java", "-cp", "DivisorCalculator", "4");
-        ProcessBuilder process6 = new ProcessBuilder("java", "-cp", "DivisorCalculator", "6");
-        ProcessBuilder process12 = new ProcessBuilder("java", "-cp", "DivisorCalculator", "12");
 
-        // Redirigir la salida de cada proceso a un archivo
-        process2.redirectOutput(ProcessBuilder.Redirect.to(new File("divisors_2.txt")));
-        process3.redirectOutput(ProcessBuilder.Redirect.to(new File("divisors_3.txt")));
-        process4.redirectOutput(ProcessBuilder.Redirect.to(new File("divisors_4.txt")));
-        process6.redirectOutput(ProcessBuilder.Redirect.to(new File("divisors_6.txt")));
-        process12.redirectOutput(ProcessBuilder.Redirect.to(new File("divisors_12.txt")));
+        // Ruta de la clase
+        String classPath = "E:\\DAM-2\\Procesos\\Proyectos Java\\Procesos\\out\\production\\Procesos";
+
+        // Nombre de la clase
+        String className = "Ejercicio_2_2.DivisorCalculator";
+
+        // Crear ProcessBuilder para los procesos de cálculo de divisores
+        ProcessBuilder process2 = new ProcessBuilder("java", "-cp", classPath, className, String.valueOf(2));
+        ProcessBuilder process3 = new ProcessBuilder("java", "-cp", classPath, className, String.valueOf(3));
+        ProcessBuilder process4 = new ProcessBuilder("java", "-cp", classPath, className, String.valueOf(4));
+        ProcessBuilder process6 = new ProcessBuilder("java", "-cp", classPath, className, String.valueOf(6));
+        ProcessBuilder process12 = new ProcessBuilder("java", "-cp", classPath, className, String.valueOf(12));
+
+
 
         // Iniciar los procesos
+
         Process p2 = process2.start();
         Process p3 = process3.start();
         p2.waitFor();
