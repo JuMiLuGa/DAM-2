@@ -119,6 +119,15 @@ public class User extends JFrame implements ActionListener {
 			dispose();
 			loginWindow.setVisible(true);
 		}
+
+		if(e.getSource() == btnCrearNuevoUsuario){
+			app.crearNuevoUsuario();
+		}
+
+		if(e.getSource() == btnBorrarUsuario){
+			app.borrarUsuario();
+			dispose();
+		}
 	}
 
 }

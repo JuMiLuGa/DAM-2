@@ -55,7 +55,15 @@ public class UserDelete extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
+		if(e.getSource() == btnBorrar){
+			app.borrarUsuarioLista();
+			dispose();
+			app.verLogin();
+		}
+		if(e.getSource() == btnCancelar){
+			dispose();
+			app.verUser();
+		}
 
 	}
 

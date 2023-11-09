@@ -96,6 +96,16 @@ public class UserCreate extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
+		if(e.getSource() == btnCancelar){
+			dispose();
+		}
+		if(e.getSource() == btnCrear){
+			String newUserName = textoNombre.getText();
+			String newUserPasswd = textoContraseña.getText();
+			String newUserAge = textoEdad.getText();
+			String newUserMail = textoCorreo.getText();
+			app.guardarUsuario(newUserName,newUserPasswd,newUserAge,newUserMail);
+			dispose();
+		}
 	}
 }

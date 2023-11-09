@@ -1,15 +1,12 @@
 package model;
 
+import java.io.Serializable;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Users {
+public class Users implements Serializable {
     private HashMap<String, User> users = new HashMap<>();
-
-    public Users() {
-        User user = new User("admin", "abc123.", "0", "admin@admin");
-        users.put(user.getName(), user);
-    }
 
     public void addUser(User user) {
         if (user != null && user.getName() != null && !user.getName().isEmpty()) {
@@ -33,4 +30,13 @@ public class Users {
         return users.containsKey(name);
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        Collection<User> users = this.users.values();
+        for (User user : users) {
+            sb.append(user.toString()).append("\n");
+        }
+        return sb.toString();
+    }
 }

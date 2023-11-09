@@ -2,14 +2,12 @@ package model;
 
 import gui.Login;
 
+import java.io.IOException;
+
 public class Main {
 
-	public static void main(String[] args) 	{
+	public static void main(String[] args) throws IOException {
 		App app = new App();
-		//Iniciar GUI
-
-		Login loginWindow = new Login(app);
-		loginWindow.setVisible(true);
 	}
 
 
