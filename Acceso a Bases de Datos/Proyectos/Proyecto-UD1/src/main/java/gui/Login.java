@@ -3,6 +3,7 @@ package gui;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -66,7 +67,12 @@ public class Login extends JFrame implements ActionListener {
 			String nombreUsuario = textoUsuario.getText();
 			String contrasena = textoContraseña.getText();
 
-			boolean inicioSesionExitoso = app.iniciarSesion(nombreUsuario, contrasena);
+			boolean inicioSesionExitoso = false;
+			try {
+				inicioSesionExitoso = app.iniciarSesion(nombreUsuario, contrasena);
+			} catch (IOException ex) {
+				throw new RuntimeException(ex);
+			}
 
 			if (inicioSesionExitoso) {
 				app.verUser();

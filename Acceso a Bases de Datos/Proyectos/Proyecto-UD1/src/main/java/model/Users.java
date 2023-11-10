@@ -39,4 +39,8 @@ public class Users implements Serializable {
         }
         return sb.toString();
     }
+
+    public Collection<User> devolverLista() {
+        return users.values();
+    }
 }

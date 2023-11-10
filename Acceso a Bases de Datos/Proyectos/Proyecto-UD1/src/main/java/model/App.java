@@ -27,14 +27,16 @@ public class App {
         loginWindow.setVisible(true);
     }
 
-    public boolean iniciarSesion(String nombreUsuario, String contrasena) {
+    public boolean iniciarSesion(String nombreUsuario, String contrasena) throws IOException {
         if (users.userExists(nombreUsuario)) {
             User usuario = users.getUserByUsername(nombreUsuario);
             String hashAlmacenado = usuario.getPasswordHash();
 
             if (BCrypt.checkpw(contrasena, hashAlmacenado)) {
                 session.setUser(users.getUserByUsername(nombreUsuario));
+                session.archivoLog("LOGIN");
                 return true;
+
             }
         }
 
@@ -76,10 +78,6 @@ public class App {
         changePasswordWindow.setVisible(true);
     }
 
-    public void exportarZIP() {
-        ZIP.exportarZIP();
-    }
-
     public void crearNuevoUsuario() {
         UserCreate userCreateWindow = new UserCreate(this);
         userCreateWindow.setVisible(true);
@@ -99,6 +97,24 @@ public class App {
     public void borrarUsuarioLista(){
         users.deleteUser(session.getUser().getName());
         fileHandler.saveUsers(users);
+    }
+
+    public void cerrarSesion() throws IOException {
+        Login loginWindow = new Login(this);
+        loginWindow.setVisible(true);
+        session.archivoLog("LOGOUT");
+        session.setUser(null);
+    }
+
+    public void exportAllUsersXML(File file) throws ParserConfigurationException {
+        XML.exportarXML(users, file);
+    }
+
+    public void exportAllUsersJSON(File file){
+        JSON.exportarTodosJSON(users, file);
+    }
+    public void exportarZIP(File file) throws ParserConfigurationException {
+        ZIP.exportarZIP(this, file);
     }
 }
 

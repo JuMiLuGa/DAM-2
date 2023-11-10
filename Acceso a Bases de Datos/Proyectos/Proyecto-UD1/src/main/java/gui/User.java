@@ -4,9 +4,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.xml.parsers.ParserConfigurationException;
 
 import model.App;
 
@@ -97,6 +99,11 @@ public class User extends JFrame implements ActionListener {
 			if (returnValue == JFileChooser.APPROVE_OPTION) {
 				File selectedFile = fileChooser.getSelectedFile();
 				System.out.println("Archivo seleccionado: " + selectedFile.getAbsolutePath());
+				try {
+					app.exportarZIP(selectedFile);
+				} catch (ParserConfigurationException ex) {
+					throw new RuntimeException(ex);
+				}
 			} else {
 				System.out.println("Selección de archivo cancelada.");
 			}
@@ -110,14 +117,13 @@ public class User extends JFrame implements ActionListener {
 			app.changePasswdWindow();
 		}
 
-		if(e.getSource() == btnExportarUsuarios){
-			app.exportarZIP();
-		}
-
 		if(e.getSource() == btnCerrarSesion){
-			Login loginWindow = new Login(app);
+			try {
+				app.cerrarSesion();
+			} catch (IOException ex) {
+				throw new RuntimeException(ex);
+			}
 			dispose();
-			loginWindow.setVisible(true);
 		}
 
 		if(e.getSource() == btnCrearNuevoUsuario){

@@ -27,18 +27,18 @@ public class XML {
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 
-        // Crear el elemento raíz
+
         Document doc = docBuilder.newDocument();
         Element rootElement = doc.createElement("user");
         doc.appendChild(rootElement);
 
-        // Agregar las variables como elementos al documento
+
         addElement(doc, rootElement, "name", name);
         addElement(doc, rootElement, "passwdHash", passwdHash);
         addElement(doc, rootElement, "age", age);
         addElement(doc, rootElement, "email", mail);
 
-        // Escribir el documento XML al archivo proporcionado
+
         try (FileOutputStream output = new FileOutputStream(file)) {
             writeXml(doc, output);
             System.out.println("El archivo se ha exportado correctamente");
@@ -47,6 +47,41 @@ public class XML {
         }
     }
 
+    public static void exportarXML(Users users, File directory) throws ParserConfigurationException {
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+
+        try {
+            if (!directory.exists()) {
+                directory.mkdirs();
+            }
+
+            for (User user : users.devolverLista()) {
+                String name = user.getName();
+                String passwdHash = user.getPasswordHash();
+                String age = user.getAge();
+                String mail = user.getEmail();
+
+                Document doc = docBuilder.newDocument();
+                Element rootElement = doc.createElement("user");
+                doc.appendChild(rootElement);
+
+                addElement(doc, rootElement, "name", name);
+                addElement(doc, rootElement, "passwdHash", passwdHash);
+                addElement(doc, rootElement, "age", age);
+                addElement(doc, rootElement, "email", mail);
+
+                File file = new File(directory, name + ".xml");
+                try (FileOutputStream output = new FileOutputStream(file)) {
+                    writeXml(doc, output);
+                }
+            }
+
+
+        } catch (IOException | TransformerException e) {
+            e.printStackTrace();
+        }
+    }
 
     private static void addElement(Document doc, Element rootElement, String nombre, String valor) {
         Element elemento = doc.createElement(nombre);
@@ -54,7 +89,7 @@ public class XML {
         rootElement.appendChild(elemento);
     }
 
-    // Método para escribir el documento XML en un flujo de salida
+
     private static void writeXml(Document doc, OutputStream output) throws TransformerException {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
