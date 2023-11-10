@@ -38,28 +38,40 @@ public class JSON {
         }
 
     public static void exportarTodosJSON(Users users, File directory) {
-        Gson JSON = new GsonBuilder().setPrettyPrinting().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         try {
             if (!directory.exists()) {
                 directory.mkdirs();
             }
 
-            for (User user : users.devolverLista()) {
-                String json = JSON.toJson(user);
-                File file = new File(directory, user.getName() + ".json");
+            File file = new File(directory, "usuarios.json");
+            FileWriter fileWriter = new FileWriter(file);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
-                FileWriter fileWriter = new FileWriter(file);
-                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write("[\n");
+
+            boolean firstUser = true;
+            for (User user : users.devolverLista()) {
+                String json = gson.toJson(user);
+
+                if (!firstUser) {
+                    bufferedWriter.write(",\n");
+                } else {
+                    firstUser = false;
+                }
+
                 bufferedWriter.write(json);
-                bufferedWriter.close();
             }
 
+            bufferedWriter.write("\n]");
+
+            bufferedWriter.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    }
+}
 
 

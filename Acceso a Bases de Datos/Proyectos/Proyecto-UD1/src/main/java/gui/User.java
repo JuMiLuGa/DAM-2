@@ -103,6 +103,8 @@ public class User extends JFrame implements ActionListener {
 					app.exportarZIP(selectedFile);
 				} catch (ParserConfigurationException ex) {
 					throw new RuntimeException(ex);
+				} catch (IOException ex) {
+					throw new RuntimeException(ex);
 				}
 			} else {
 				System.out.println("Selección de archivo cancelada.");

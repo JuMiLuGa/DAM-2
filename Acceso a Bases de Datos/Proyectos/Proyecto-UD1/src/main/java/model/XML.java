@@ -56,27 +56,29 @@ public class XML {
                 directory.mkdirs();
             }
 
+            Document doc = docBuilder.newDocument();
+            Element rootElement = doc.createElement("users");
+            doc.appendChild(rootElement);
+
             for (User user : users.devolverLista()) {
                 String name = user.getName();
                 String passwdHash = user.getPasswordHash();
                 String age = user.getAge();
                 String mail = user.getEmail();
 
-                Document doc = docBuilder.newDocument();
-                Element rootElement = doc.createElement("user");
-                doc.appendChild(rootElement);
+                Element userElement = doc.createElement("user");
+                rootElement.appendChild(userElement);
 
-                addElement(doc, rootElement, "name", name);
-                addElement(doc, rootElement, "passwdHash", passwdHash);
-                addElement(doc, rootElement, "age", age);
-                addElement(doc, rootElement, "email", mail);
-
-                File file = new File(directory, name + ".xml");
-                try (FileOutputStream output = new FileOutputStream(file)) {
-                    writeXml(doc, output);
-                }
+                addElement(doc, userElement, "name", name);
+                addElement(doc, userElement, "passwdHash", passwdHash);
+                addElement(doc, userElement, "age", age);
+                addElement(doc, userElement, "email", mail);
             }
 
+            File file = new File(directory, "users.xml");
+            try (FileOutputStream output = new FileOutputStream(file)) {
+                writeXml(doc, output);
+            }
 
         } catch (IOException | TransformerException e) {
             e.printStackTrace();

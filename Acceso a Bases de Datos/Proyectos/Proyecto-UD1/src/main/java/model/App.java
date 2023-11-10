@@ -113,7 +113,7 @@ public class App {
     public void exportAllUsersJSON(File file){
         JSON.exportarTodosJSON(users, file);
     }
-    public void exportarZIP(File file) throws ParserConfigurationException {
+    public void exportarZIP(File file) throws ParserConfigurationException, IOException {
         ZIP.exportarZIP(this, file);
     }
 }
