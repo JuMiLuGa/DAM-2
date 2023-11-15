@@ -1,7 +1,5 @@
 package model;
 
-import gui.Login;
-
 import java.io.IOException;
 
 public class Main {
