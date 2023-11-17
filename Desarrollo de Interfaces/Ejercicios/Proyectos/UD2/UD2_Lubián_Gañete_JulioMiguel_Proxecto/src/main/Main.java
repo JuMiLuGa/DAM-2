@@ -1,6 +1,7 @@
 package main;
 
 import controller.FrontControllerJFrame;
+import model.aldComputerService.aldComputerServiceModel;
 import view.MainJFrame;
 
 public class Main {
