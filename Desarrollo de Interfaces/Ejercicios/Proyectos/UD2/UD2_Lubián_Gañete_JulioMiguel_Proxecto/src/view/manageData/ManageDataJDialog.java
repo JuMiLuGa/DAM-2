@@ -1,5 +1,7 @@
 package view.manageData;
 
+import java.awt.event.ActionListener;
+
 public class ManageDataJDialog extends javax.swing.JDialog {
 
     
@@ -141,7 +143,79 @@ public class ManageDataJDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_phoneTextFieldActionPerformed
 
+    //Inicio listeners de los botones
+    
+    public void setCancelButtonActionListener(ActionListener listener){
+        this.canceljButton.addActionListener(listener);
+    }
+    
+    public void setSaveButtonActionListener(ActionListener listener){
+        this.savejButton.addActionListener(listener);
+    }
+    
+    public void setEditButtonActionListener(ActionListener listener){
+        this.editjButton.addActionListener(listener);
+    }
+    
+    //Fin listeners de los botones
+    
+    //Inicio activar/desactivar botones
+    
+    public void enableAllButtons(){
+        this.canceljButton.setEnabled(true);
+        this.savejButton.setEnabled(true);
+        this.editjButton.setEnabled(true);
+    }
+    
+    public void disableAllButtons(){
+        this.canceljButton.setEnabled(false);
+        this.savejButton.setEnabled(false);
+        this.editjButton.setEnabled(false);
+    }
+    
+    public void enableCancelButton(){
+        this.canceljButton.setEnabled(true);
+    }
+    public void disableCancelButton(){
+        this.canceljButton.setEnabled(false);
+    }
+    
+    public void enableSaveButton(){
+        this.savejButton.setEnabled(true);
+    }
+    public void disableSaveButton(){
+        this.savejButton.setEnabled(false);
+    }
+    
+    public void enableEditButton(){
+        this.editjButton.setEnabled(true);
+    }
+    public void disableEditButton(){
+        this.editjButton.setEnabled(false);
+    }
+    
+    //Fin activar/desactivar botones
 
+    //Inicio gets de los datos introducidos
+    
+    public String getNameTextField(){
+        return nameTextField.getText();
+    }
+    
+    public String getAddressTextField(){
+        return addressTextField.getText();
+    }
+    
+    public String getPhoneTextField(){
+        return phoneTextField.getText();
+    }
+    
+    public String getEmployeesSpinnerValue(){
+        return employeesjSpinner.getValue().toString();
+    }
+    
+    //Fin gets de los datos introducidos
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addressLabel;
     private javax.swing.JTextField addressTextField;
