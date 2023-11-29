@@ -1,0 +1,7 @@
+ficheros--> texto(leer y escribir)
+	|-> binarios(leer y escribir)
+		|--> serializacion
+
+XML -->(leer y escribir)
+JSON ->(leer y escribir)
+ZIP -->(Crear ficheros zip)
