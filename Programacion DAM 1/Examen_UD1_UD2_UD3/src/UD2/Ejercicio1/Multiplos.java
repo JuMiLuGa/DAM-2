@@ -17,13 +17,18 @@ public class Multiplos {
         System.out.println();
 
         System.out.print("Escriba el segundo número: ");
+
         n2 = scanner.nextInt();
 
 
-        if (n1 % n2 == 0){
-            System.out.println("El número " + n1 + " es multiplo de " + n2);
+        verificarMultiplo(n1,n2);
+    }
+
+    private static void verificarMultiplo(int num1, int num2){
+        if (num1 % num2 == 0){
+            System.out.println("El número " + num1 + " es multiplo de " + num2);
         } else {
-            System.out.println("El número " + n1 + " no es multiplo de " + n2);
+            System.out.println("El número " + num1 + " no es multiplo de " + num2);
         }
     }
 }
