@@ -5,6 +5,9 @@
 
 package model.aldComputerService;
 
+import java.util.Collection;
+import java.util.HashMap;
+
 /**
  *
  * @author Lubián_Gañete_Julio_Miguel
@@ -16,14 +19,30 @@ public class AldComputerService {
     private String address;
     private String telephoneNumber;
     private int numberOfEmployees;
+    private HashMap<String, Computer> computers = new HashMap<>();
 
     public AldComputerService() {
         this.name = "";
         this.address = "";
         this.telephoneNumber = "";
         this.numberOfEmployees = 0;
+        addDefautComputers();
     }
 
+    public void addDefautComputers(){
+        Laptop laptop = new Laptop(12500, true, "Laptop-0", "Acer", "Nitro 5");
+        CryptoRig cryptoRig = new CryptoRig(4, 48, "CryptoRig-0", "Nvidia", "Rig500");
+        PersonalComputer personalComputer = new PersonalComputer("AMD Ryzen 7800x3D", "Nvidia RTX-4080Ti", 600, "PersonalComputer-0", "HP", "ENVY");
+        
+        computers.put(laptop.getSerial(), laptop);
+        computers.put(personalComputer.getSerial(), personalComputer);
+        computers.put(cryptoRig.getSerial(), cryptoRig);
+    }
+    
+    public Collection<Computer> getComputers(){
+        return computers.values();
+    }
+    
     public String getName() {
         return name;
     }

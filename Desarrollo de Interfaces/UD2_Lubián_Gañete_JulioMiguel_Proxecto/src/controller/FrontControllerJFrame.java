@@ -5,12 +5,14 @@
 
 package controller;
 
+import controller.manageAldComputers.ManageAldComputersController;
 import controller.manageAldData.ManageAldDataController;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.aldComputerService.AldComputerService;
 import view.MainJFrame;
 import view.aldComputerService.ManageAldDataDialog;
+import view.aldComputers.ManageAldComputersDialog;
 
 /**
  *
@@ -26,7 +28,8 @@ public class FrontControllerJFrame {
         this.view = view;
         this.model = model;
         this.view.setQuitMenuItemListener(this.setQuitMenuItemActionListener());
-        this.view.setManageDataMenuItemListener(setManageDataItemActionListener());
+        this.view.setManageDataMenuItemListener(this.setManageDataItemActionListener());
+        this.view.setTableMenuItemListener(this.getTableMenuItemActionListener());
     }
 
     private ActionListener setQuitMenuItemActionListener() {
@@ -52,4 +55,15 @@ public class FrontControllerJFrame {
         return al;
     }
 
+    private ActionListener getTableMenuItemActionListener() {
+        ActionListener al = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ManageAldComputersDialog macd = new ManageAldComputersDialog(view, true);
+                ManageAldComputersController macc = new ManageAldComputersController(macd, model);
+                macd.setVisible(true);
+            }
+        };
+        return al;
+    }
 }
