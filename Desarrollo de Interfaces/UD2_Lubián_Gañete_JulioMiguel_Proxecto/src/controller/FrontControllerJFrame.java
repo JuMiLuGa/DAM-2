@@ -62,6 +62,7 @@ public class FrontControllerJFrame {
                 ManageAldComputersDialog macd = new ManageAldComputersDialog(view, true);
                 ManageAldComputersController macc = new ManageAldComputersController(macd, model);
                 macd.setVisible(true);
+                
             }
         };
         return al;

@@ -8,6 +8,6 @@ package model.aldComputerService;
  *
  * @author DAM2_Alu10
  */
-public class ComputerType {
-    
+public enum ComputerType {
+    LAPTOP,PERSONALCOMPUTER,CRYPTORIG
 }

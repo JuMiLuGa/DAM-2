@@ -6,6 +6,8 @@ package view.aldComputers;
 
 import java.awt.event.ActionListener;
 import java.util.Vector;
+import javax.swing.ComboBoxModel;
+import javax.swing.JTextField;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -50,6 +52,7 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
         computerTypeComboBox = new javax.swing.JComboBox<>();
         saveButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
+        addComputerButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -89,15 +92,27 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
 
         computerModelLabel.setText("Model");
 
-        serialTextField.setText("jTextField1");
+        serialTextField.setEnabled(false);
+        serialTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                serialTextFieldActionPerformed(evt);
+            }
+        });
 
-        brandTextField.setText("jTextField1");
+        brandTextField.setEnabled(false);
 
-        modelTextField.setText("jTextField1");
+        modelTextField.setEnabled(false);
+
+        computerTypeComboBox.setEnabled(false);
 
         saveButton.setText("Save");
+        saveButton.setVisible(false);
 
         cancelButton.setText("Cancel");
+        cancelButton.setVisible(false);
+
+        addComputerButton.setText("Add");
+        addComputerButton.setVisible(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,7 +130,7 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
                             .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(computerEditorLabel)
                     .addGroup(layout.createSequentialGroup()
@@ -124,7 +139,7 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
                         .addComponent(computerTypeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(computerBrandLabel)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(brandTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(computerModelLabel)
@@ -132,12 +147,13 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
                         .addComponent(modelTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(computerSerialLabel)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(serialTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(99, 99, 99)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(saveButton)
-                    .addComponent(cancelButton))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(saveButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cancelButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addComputerButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(77, 77, 77))
         );
         layout.setVerticalGroup(
@@ -158,16 +174,25 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
                             .addComponent(deleteButton))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(computerTypeLabel)
-                            .addComponent(computerTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(computerTypeLabel)
+                                    .addComponent(computerTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(addComputerButton)))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(computerSerialLabel)
-                            .addComponent(serialTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(saveButton))
-                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(computerSerialLabel)
+                                    .addComponent(serialTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(saveButton)
+                                .addGap(1, 1, 1)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(computerBrandLabel)
                             .addComponent(brandTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -179,13 +204,17 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
                                     .addComponent(modelTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                                 .addComponent(cancelButton)
                                 .addGap(41, 41, 41))))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void serialTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_serialTextFieldActionPerformed
+
+    }//GEN-LAST:event_serialTextFieldActionPerformed
 
     public void addAddButtonActionListener(ActionListener listener) {
         this.addButton.addActionListener(listener);
@@ -199,21 +228,18 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
         this.deleteButton.addActionListener(listener);
     }
 
-    
     public void addTableModelListener(TableModelListener listener) {
         computerTable.getModel().addTableModelListener(listener);
     }
-    
 
     public void addComputersTableModel(TableModel tableModel) {
         computerTable.setModel(tableModel);
     }
 
-    
-    public TableModel getComputersTableModel(){
+    public TableModel getComputersTableModel() {
         return computerTable.getModel();
     }
-    
+
     public String getCellInfo() {
         String info = "";
         int row = this.computerTable.getSelectedRow();
@@ -224,16 +250,98 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
         return info;
     }
 
-        public String getCellInfo(int row, int col) {
+    public String getCellInfo(int row, int col) {
         String info = "";
         if (col >= 0 && row >= 0) {
             info = this.computerTable.getModel().getValueAt(row, col).toString();
         }
         return info;
     }
+
+    public void addserialTextFieldActionListener(ActionListener listener) {
+        this.serialTextField.addActionListener(listener);
+    }
+
+    public void setSerialTextField(String text) {
+        serialTextField.setText(text);
+    }
+
+    public void setBrandTextField(String text) {
+        brandTextField.setText(text);
+    }
+
+    public void setModelTextField(String text) {
+        modelTextField.setText(text);
+    }
+
+    public javax.swing.JTable getComputerTable() {
+        return computerTable;
+    }
+
+    public void enableTextFields(boolean b) {
+        this.modelTextField.setEnabled(b);
+        this.serialTextField.setEnabled(b);
+        this.brandTextField.setEnabled(b);
+    }
     
+    public void addSaveButtonActionListener(ActionListener listener) {
+        this.saveButton.addActionListener(listener);
+    }
+    
+    public void modifyTableRow(int rowIndex, String serial, String brand, String modelValue) {
+        DefaultTableModel tableModel = (DefaultTableModel) computerTable.getModel();
+        tableModel.setValueAt(serial, rowIndex, 0);
+        tableModel.setValueAt(brand, rowIndex, 1);
+        tableModel.setValueAt(modelValue, rowIndex, 2);
+    }
+    
+    public JTextField getSerialTextField() {
+        return serialTextField;
+    }
+    
+    public JTextField getBrandTextField() {
+        return brandTextField;
+    }
+
+    public JTextField getModelTextField() {
+        return modelTextField;
+    }
+    
+    public void addCancelButtonActionListener(ActionListener listener) {
+        this.cancelButton.addActionListener(listener);
+    }
+    
+    public void changeComboBoxModel(ComboBoxModel cmbm){
+        this.computerTypeComboBox.setModel(cmbm);
+    }
+    
+    public void selectInComboBox(int indice){
+        computerTypeComboBox.setSelectedIndex(indice);
+    }
+    
+    public void addAddComputerButtonActionListener(ActionListener listener) {
+        this.addComputerButton.addActionListener(listener);
+    }
+    
+    public void setVisibleAddComputerButton(Boolean b){
+        this.addComputerButton.setVisible(b);
+    }
+    
+    public void setVisibleCancelComputerButton(Boolean b){
+        this.cancelButton.setVisible(b);
+    }
+    
+    public void setVisibleSaveComputerButton(Boolean b){
+        this.saveButton.setVisible(b);
+    }
+    
+    public void enableCombobox(boolean b) {
+        this.computerTypeComboBox.setEnabled(b);
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
+    private javax.swing.JButton addComputerButton;
     private javax.swing.JTextField brandTextField;
     private javax.swing.JButton cancelButton;
     private javax.swing.JLabel computerBrandLabel;
@@ -251,4 +359,7 @@ public class ManageAldComputersDialog extends javax.swing.JDialog {
     private javax.swing.JLabel tableLabel;
     private javax.swing.JScrollPane userTableScrollPane;
     // End of variables declaration//GEN-END:variables
+
+    
+
 }

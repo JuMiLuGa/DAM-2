@@ -14,8 +14,8 @@ public class PersonalComputer extends Computer{
     private String gpu;
     private int networkCardSpeed;
 
-    public PersonalComputer(String cpu, String gpu, int networkCardSpeed, String Serial, String Brand, String Model) {
-        super(Serial, Brand, Model);
+    public PersonalComputer(ComputerType computerType, String cpu, String gpu, int networkCardSpeed, String Serial, String Brand, String Model) {
+        super(computerType,Serial, Brand, Model);
         this.cpu = cpu;
         this.gpu = gpu;
         this.networkCardSpeed = networkCardSpeed;

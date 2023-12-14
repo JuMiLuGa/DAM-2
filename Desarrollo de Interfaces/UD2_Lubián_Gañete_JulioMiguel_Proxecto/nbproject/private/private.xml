@@ -2,6 +2,20 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/E:/DAM-2/Desarrollo%20de%20Interfaces/UD2_Lubián_Gañete_JulioMiguel_Proxecto/src/model/aldComputerService/PersonalComputer.java</file>
+            <file>file:/E:/DAM-2/Desarrollo%20de%20Interfaces/UD2_Lubián_Gañete_JulioMiguel_Proxecto/src/controller/manageAldData/ManageAldDataController.java</file>
+            <file>file:/E:/DAM-2/Desarrollo%20de%20Interfaces/UD2_Lubián_Gañete_JulioMiguel_Proxecto/src/main/Main.java</file>
+            <file>file:/E:/DAM-2/Desarrollo%20de%20Interfaces/UD2_Lubián_Gañete_JulioMiguel_Proxecto/src/controller/manageAldComputers/ManageAldComputersController.java</file>
+            <file>file:/E:/DAM-2/Desarrollo%20de%20Interfaces/UD2_Lubián_Gañete_JulioMiguel_Proxecto/src/model/aldComputerService/Computer.java</file>
+            <file>file:/E:/DAM-2/Desarrollo%20de%20Interfaces/UD2_Lubián_Gañete_JulioMiguel_Proxecto/src/model/aldComputerService/ComputerType.java</file>
+            <file>file:/E:/DAM-2/Desarrollo%20de%20Interfaces/UD2_Lubián_Gañete_JulioMiguel_Proxecto/src/view/MainJFrame.java</file>
+            <file>file:/E:/DAM-2/Desarrollo%20de%20Interfaces/UD2_Lubián_Gañete_JulioMiguel_Proxecto/src/model/aldComputerService/AldComputerService.java</file>
+            <file>file:/E:/DAM-2/Desarrollo%20de%20Interfaces/UD2_Lubián_Gañete_JulioMiguel_Proxecto/src/model/aldComputerService/Laptop.java</file>
+            <file>file:/E:/DAM-2/Desarrollo%20de%20Interfaces/UD2_Lubián_Gañete_JulioMiguel_Proxecto/src/model/aldComputerService/CryptoRig.java</file>
+            <file>file:/E:/DAM-2/Desarrollo%20de%20Interfaces/UD2_Lubián_Gañete_JulioMiguel_Proxecto/src/controller/FrontControllerJFrame.java</file>
+            <file>file:/E:/DAM-2/Desarrollo%20de%20Interfaces/UD2_Lubián_Gañete_JulioMiguel_Proxecto/src/view/aldComputers/ManageAldComputersDialog.java</file>
+            <file>file:/E:/DAM-2/Desarrollo%20de%20Interfaces/UD2_Lubián_Gañete_JulioMiguel_Proxecto/src/view/aldComputerService/ManageAldDataDialog.java</file>
+        </group>
     </open-files>
 </project-private>

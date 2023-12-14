@@ -12,14 +12,14 @@ public class CryptoRig extends Computer{
     private int numberOfGraphicCards;
     private int vRAMTotal;
     
-    public CryptoRig(String Serial, String Brand, String Model) {
-        super(Serial, Brand, Model);
+    public CryptoRig(ComputerType computerType, String Serial, String Brand, String Model) {
+        super(computerType,Serial, Brand, Model);
         this.numberOfGraphicCards = 0;
         this.vRAMTotal = 0;
     }
     
-    public CryptoRig(int numberOfGraphicCards, int vRAMTotal, String Serial, String Brand, String Model) {
-        super(Serial, Brand, Model);
+    public CryptoRig(ComputerType computerType, int numberOfGraphicCards, int vRAMTotal, String Serial, String Brand, String Model) {
+        super(computerType, Serial, Brand, Model);
         this.numberOfGraphicCards = numberOfGraphicCards;
         this.vRAMTotal = vRAMTotal;
     }

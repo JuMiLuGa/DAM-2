@@ -15,8 +15,10 @@ public abstract class Computer {
     private String Serial;
     private String Brand;
     private String Model;
+    private ComputerType computerType;
 
-    public Computer(String Serial, String Brand, String Model) {
+    public Computer(ComputerType computerType, String Serial, String Brand, String Model) {
+        this.computerType = computerType;
         this.Serial = Serial;
         this.Brand = Brand;
         this.Model = Model;
@@ -44,6 +46,14 @@ public abstract class Computer {
 
     public void setModel(String Model) {
         this.Model = Model;
+    }
+
+    public ComputerType getComputerType() {
+        return computerType;
+    }
+
+    public void setComputerType(ComputerType computerType) {
+        this.computerType = computerType;
     }
     
     

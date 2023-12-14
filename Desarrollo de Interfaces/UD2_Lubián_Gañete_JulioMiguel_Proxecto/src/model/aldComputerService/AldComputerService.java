@@ -30,9 +30,9 @@ public class AldComputerService {
     }
 
     public void addDefautComputers(){
-        Laptop laptop = new Laptop(12500, true, "Laptop-0", "Acer", "Nitro 5");
-        CryptoRig cryptoRig = new CryptoRig(4, 48, "CryptoRig-0", "Nvidia", "Rig500");
-        PersonalComputer personalComputer = new PersonalComputer("AMD Ryzen 7800x3D", "Nvidia RTX-4080Ti", 600, "PersonalComputer-0", "HP", "ENVY");
+        Laptop laptop = new Laptop(ComputerType.LAPTOP,12500, true, "Laptop-0", "Acer", "Nitro 5");
+        CryptoRig cryptoRig = new CryptoRig(ComputerType.CRYPTORIG, 4, 48, "CryptoRig-0", "Nvidia", "Rig500");
+        PersonalComputer personalComputer = new PersonalComputer(ComputerType.PERSONALCOMPUTER, "AMD Ryzen 7800x3D", "Nvidia RTX-4080Ti", 600, "PersonalComputer-0", "HP", "ENVY");
         
         computers.put(laptop.getSerial(), laptop);
         computers.put(personalComputer.getSerial(), personalComputer);
@@ -81,6 +81,11 @@ public class AldComputerService {
                 + "Address: " + address + "\n"
                 + "Telephone Number: " + telephoneNumber + "\n"
                 + "Number of Employees: " + numberOfEmployees;
+    }
+    
+    public Computer getSelectedComputers(String serial){
+        return computers.get(serial);
+        
     }
 
 }

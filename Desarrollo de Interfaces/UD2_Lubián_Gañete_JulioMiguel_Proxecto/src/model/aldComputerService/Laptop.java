@@ -12,14 +12,14 @@ public class Laptop extends Computer{
     private int batteryMAh;
     private boolean thunderbolt;
 
-    public Laptop(String Serial, String Brand, String Model) {
-        super(Serial, Brand, Model);
+    public Laptop(ComputerType computerType, String Serial, String Brand, String Model) {
+        super(computerType, Serial, Brand, Model);
         this.batteryMAh = 0;
         this.thunderbolt = false;
     }
     
-    public Laptop(int batteryMAh, boolean thunderbolt, String Serial, String Brand, String Model) {
-        super(Serial, Brand, Model);
+    public Laptop(ComputerType computerType, int batteryMAh, boolean thunderbolt, String Serial, String Brand, String Model) {
+        super(computerType, Serial, Brand, Model);
         this.batteryMAh = batteryMAh;
         this.thunderbolt = thunderbolt;
     }
