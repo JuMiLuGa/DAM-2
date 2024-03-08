@@ -1,0 +1,7 @@
+Por ser unha linguaxe multiplataforma, o mesmo programa pode ser executado en diferentes
+sistemas operativos sen cambios. Para iso precisa da instalación da máquina virtual de Java.
+Os principais navegadores do mercado permiten executar miniaplicacións desenvolvidas en Java.
+O programa desenvolvido en Java funcionará sobre unha Máquina Virtual Java.
+Esta máquina virtual é a que se encarga de comunicarse coa máquina hardware real e é vista
+polas aplicacións Java sempre do mesmo xeito con independencia da máquina real que haxa por
+debaixo da máquina virtual Java.
