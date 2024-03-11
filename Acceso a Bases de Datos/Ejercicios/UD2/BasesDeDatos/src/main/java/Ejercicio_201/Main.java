@@ -31,9 +31,6 @@ public class Main {
             Connection sqlServerConnection = MicrosoftSQLServerConnection.getConnection();
             System.out.println("Conexión con Microsoft SQL Server establecida.");
 
-            // Puedes realizar operaciones con las conexiones aquí
-
-            // Cierra las conexiones
             sqliteConnection.close();
             mysqlConnection.close();
             mariaDBConnection.close();
